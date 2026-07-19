@@ -22,3 +22,12 @@ datasets:
 rul:
   cap_enabled: true
   cap_value: 125
+
+# Feature Selection
+feature_selection:
+
+  remove_constant: true
+
+  variance_threshold: 0.001
+
+  manual_remove: []
