@@ -17,3 +17,8 @@ datasets:
   - FD002
   - FD003
   - FD004
+
+# Remaining Useful Life (RUL)
+rul:
+  cap_enabled: true
+  cap_value: 125

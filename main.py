@@ -11,7 +11,7 @@ from src.preprocessing.data_loader import DataLoader
 from src.preprocessing.validator import DatasetValidator
 from src.preprocessing.statistics import DatasetStatistics
 from src.preprocessing.sensor_analysis import SensorAnalysis
-
+from src.preprocessing.rul_generator import RULGenerator
 from src.visualization.eda import EDAPlots
 
 from src.utils.config import load_config
@@ -58,7 +58,28 @@ def main():
                 # Load Dataset
                 # -----------------------------------------
                 train = loader.load_train(dataset)
+                # -----------------------------------------
+                # Generate Remaining Useful Life
+                # -----------------------------------------
+                train = RULGenerator.generate(
+                    train,
+                    cap_enabled=config["rul"]["cap_enabled"],
+                    cap_value=config["rul"]["cap_value"],
+                )
 
+                logger.info("RUL labels generated successfully.")
+                logger.info(
+                    "RUL Range : %d -> %d",
+                    train["RUL"].min(),
+                    train["RUL"].max(),
+                )
+                logger.info("\nFirst Engine RUL Preview")
+                preview = train.loc[
+                    train["engine_id"] == 1,
+                    ["engine_id", "cycle", "RUL"]
+                ].head(10)
+
+                logger.info("\n%s", preview)
                 # -----------------------------------------
                 # Validation
                 # -----------------------------------------
