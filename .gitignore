@@ -1,0 +1,55 @@
+# Python
+
+__pycache__/
+
+*.pyc
+
+*.pyo
+
+*.pyd
+
+*.egg-info
+
+# Virtual Environment
+
+venv/
+
+.env
+
+# Jupyter
+
+.ipynb_checkpoints/
+
+# Logs
+
+logs/
+
+*.log
+
+# Models
+
+models/*.keras
+
+models/*.h5
+
+models/*.pkl
+
+models/*.joblib
+
+# Processed Data
+
+data/processed/
+
+data/interim/
+
+# IDE
+
+.vscode/
+
+.idea/
+
+# OS
+
+.DS_Store
+
+Thumbs.db
