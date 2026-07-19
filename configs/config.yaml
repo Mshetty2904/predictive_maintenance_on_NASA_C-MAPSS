@@ -2,12 +2,12 @@ dataset_path: data/raw
 
 processed_path: data/processed
 
-window_size: 30
-
 random_seed: 42
 
-test_size: 0.2
+window_size: 30
 
 batch_size: 64
 
 epochs: 100
+
+learning_rate: 0.001
