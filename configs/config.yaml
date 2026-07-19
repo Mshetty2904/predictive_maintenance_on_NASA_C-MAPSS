@@ -11,3 +11,9 @@ batch_size: 64
 epochs: 100
 
 learning_rate: 0.001
+
+datasets:
+  - FD001
+  - FD002
+  - FD003
+  - FD004
